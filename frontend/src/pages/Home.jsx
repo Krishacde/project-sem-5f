@@ -1,122 +1,217 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-// import { useAuth } from '../context/AuthContext';
-import { Lightbulb, Users, MessageCircle, TrendingUp, ArrowRight } from 'lucide-react';
-import './Home.css';
+import {
+  ArrowRight,
+  Lightbulb,
+  Users,
+  MessageCircle,
+  TrendingUp,
+  Sparkles
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
 
 const Home = () => {
-//   const { isAuthenticated } = useAuth();
-
-const  isAuthenticated=false;
   return (
-    <div className="home-page">
-      <section className="hero-section">
-        <div className="container">
-          <div className="hero-content">
+    <main className="home">
+
+      {/* HERO */}
+
+      <section className="hero">
+        <div className="hero-container">
+
+          <div>
+            <div className="hero-badge">
+              <Sparkles size={15} />
+              Build ideas. Find people. Create impact.
+            </div>
+
             <h1 className="hero-title">
-              Share Your Startup Ideas,
+              Your idea deserves
               <br />
-              Build Amazing Teams
+              the right <span>team.</span>
             </h1>
+
             <p className="hero-description">
-              VicharManthan is the ultimate platform for founders and innovators to share startup ideas,
-              connect with talented collaborators, and bring their visions to life.
+              VicharManthan helps founders and innovators
+              share startup ideas, discover talented
+              collaborators and turn concepts into real
+              projects.
             </p>
+
             <div className="hero-actions">
-              {isAuthenticated ? (
-                <>
-                  {/* <Link to="/ideas" className="btn btn-primary btn-lg"> */}
-                    Explore Ideas
-                    <ArrowRight size={20} />
-                  {/* </Link> */}
-                  {/* <Link to="/create-idea" className="btn btn-secondary btn-lg"> */}
-                    Share Your Idea
-                  {/* </Link> */}
-                </>
-              ) : (
-                <>
-                  {/* <Link to="/register" className="btn btn-primary btn-lg"> */}
-                    Get Started
-                    <ArrowRight size={20} />
-                  {/* </Link> */}
-                  {/* <Link to="/ideas" className="btn btn-secondary btn-lg"> */}
-                    Explore Ideas
-                  {/* </Link> */}
-                </>
-              )}
+              <Link
+                to="/register"
+                className="btn btn-primary"
+              >
+                Get Started
+                <ArrowRight size={18} />
+              </Link>
+
+              <Link
+                to="/login"
+                className="btn btn-secondary"
+              >
+                Sign In
+              </Link>
             </div>
           </div>
+
+
+          <div className="hero-card">
+
+            <div className="idea-icon">
+              <Lightbulb size={29} />
+            </div>
+
+            <h3>
+              Great ideas start with a conversation.
+            </h3>
+
+            <p>
+              Share what you're building, find people
+              with complementary skills and create
+              something meaningful together.
+            </p>
+
+            <div
+              style={{
+                marginTop: "25px",
+                display: "flex",
+                gap: "8px",
+                flexWrap: "wrap"
+              }}
+            >
+              <span className="hero-badge">
+                Startup
+              </span>
+
+              <span
+                className="hero-badge"
+                style={{
+                  color: "var(--green)",
+                  background: "var(--green-light)"
+                }}
+              >
+                Collaboration
+              </span>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
-      <section className="features-section">
-        <div className="container">
-          <h2 className="section-title">Why Choose VicharManthan?</h2>
+
+      {/* FEATURES */}
+
+      <section className="features">
+
+        <div className="section-container">
+
+          <div className="section-heading">
+            <h2>
+              Everything you need to build
+            </h2>
+
+            <p>
+              From the first idea to finding the right
+              collaborators, VicharManthan keeps the
+              process simple.
+            </p>
+          </div>
+
+
           <div className="features-grid">
+
             <div className="feature-card">
               <div className="feature-icon">
-                <Lightbulb size={32} />
+                <Lightbulb size={23} />
               </div>
+
               <h3>Share Ideas</h3>
+
               <p>
-                Post your startup ideas with detailed descriptions, required skills, and team size.
-                Get feedback from the community.
+                Present your startup idea and explain
+                what you're trying to build.
               </p>
             </div>
 
+
             <div className="feature-card">
               <div className="feature-icon">
-                <Users size={32} />
+                <Users size={23} />
               </div>
+
               <h3>Build Teams</h3>
+
               <p>
-                Connect with talented individuals who share your passion. Review proposals and
-                build your dream team.
+                Find people with skills that complement
+                your own.
               </p>
             </div>
+
 
             <div className="feature-card">
               <div className="feature-icon">
-                <MessageCircle size={32} />
+                <MessageCircle size={23} />
               </div>
-              <h3>Real-time Chat</h3>
+
+              <h3>Collaborate</h3>
+
               <p>
-                Communicate seamlessly with potential team members through our integrated
-                real-time messaging system.
+                Discuss ideas and communicate with
+                potential team members.
               </p>
             </div>
+
 
             <div className="feature-card">
               <div className="feature-icon">
-                <TrendingUp size={32} />
+                <TrendingUp size={23} />
               </div>
-              <h3>Community Validation</h3>
+
+              <h3>Grow Together</h3>
+
               <p>
-                Get your ideas validated through upvotes and comments. See what resonates
-                with the community.
+                Validate your ideas and move from
+                concept to execution.
               </p>
             </div>
+
           </div>
+
         </div>
+
       </section>
 
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <h2>Ready to Turn Your Idea Into Reality?</h2>
-            <p>Join thousands of founders and innovators building the future</p>
-            {/* {!isAuthenticated && ( */}
 
+      {/* CTA */}
 
-            {/* //   <Link to="/register" className="btn btn-primary btn-lg"> */}
-                Sign Up Now
-                <ArrowRight size={20} />
-              {/* </Link> */}
-            {/* )} */}
-          </div>
+      <section className="cta">
+
+        <div className="cta-box">
+
+          <h2>
+            Ready to build something?
+          </h2>
+
+          <p>
+            Create your account and start sharing
+            your ideas today.
+          </p>
+
+          <Link
+            to="/register"
+            className="btn btn-primary"
+          >
+            Create Account
+            <ArrowRight size={18} />
+          </Link>
+
         </div>
+
       </section>
-    </div>
+
+    </main>
   );
 };
 
